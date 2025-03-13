@@ -27,3 +27,6 @@ replay_pid*
 *.settings
 *.classpath
 *.project
+
+# Maven target folder
+target/
