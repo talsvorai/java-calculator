@@ -17,11 +17,16 @@ pipeline {
 
         stage('Build') {
             steps {
+                script {
+                    echo "This is build stage"
             }
         }
 
         stage('Test') {
             steps {
+                script {
+                    echo "This is test stage"
+                }
             }
         }
     }
