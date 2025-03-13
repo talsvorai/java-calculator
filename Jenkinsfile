@@ -21,8 +21,6 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
-                    echo "${MAVEN_HOME}"
-                    echo "${PATH}"
                     bat 'mvn clean package'
                     
                 }
