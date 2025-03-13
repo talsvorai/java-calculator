@@ -12,4 +12,5 @@ To run this calculator on your local machine, follow these steps:
 2. Navigate to the project directory
 3. You can run it directly (without building) via your terminal, or build the project first, and then run it.
 
+test
 
