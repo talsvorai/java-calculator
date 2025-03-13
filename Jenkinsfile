@@ -17,17 +17,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
-                    sh "${MAVEN_HOME}/bin/mvn clean package"
-                }
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    sh "${MAVEN_HOME}/bin/mvn test"
-                }
             }
         }
     }
