@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        MAVEN_HOME = tool 'Maven' // Assumes Maven is installed and configured in Jenkins
+    }
+
+
     stages {
         stage('Checkout') {
             steps {
@@ -15,6 +20,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
+                    echo ${MAVEN_HOME}
                     bat 'mvn clean package'
                     
                 }
