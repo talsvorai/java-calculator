@@ -19,6 +19,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
+                }
             }
         }
 
