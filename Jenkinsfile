@@ -19,6 +19,8 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
+                    bat 'mvn clean package'
+                    
                 }
             }
         }
