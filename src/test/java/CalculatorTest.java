@@ -1,48 +1,58 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Random;
 
 class CalculatorTest {
     private Calculator calculator;
+    private final Random random = new Random();
 
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
     }
 
+    //Set random numbers for the tests
+    double num_a = random.nextDouble() * 200 - 100;
+    double num_b = random.nextDouble() * 200 - 100;
+
     @Test
     void testAddition() {
-        calculator.oldValue = 5;
-        calculator.newValue = 3;
+        calculator.oldValue = num_a;
+        calculator.newValue = num_b;
+        double real_result = num_a + num_b;
         calculator.calculation = 1; // Simulating plus button click
         double result = calculator.oldValue + calculator.newValue;
-        assertEquals(8, result, "Addition should return 8");
+        assertEquals(real_result, result, "Addition should return " + real_result);
     }
 
     @Test
     void testSubtraction() {
-        calculator.oldValue = 10;
-        calculator.newValue = 4;
+        calculator.oldValue = num_a;
+        calculator.newValue = num_b;
+        double real_result = num_a - num_b;
         calculator.calculation = 2; // Simulating minus button click
         double result = calculator.oldValue - calculator.newValue;
-        assertEquals(6, result, "Subtraction should return 6");
+        assertEquals(real_result, result, "Subtraction should return " + real_result);
     }
 
     @Test
     void testMultiplication() {
-        calculator.oldValue = 2;
-        calculator.newValue = 7;
+        calculator.oldValue = num_a;
+        calculator.newValue = num_b;
+        double real_result = num_a * num_b;
         calculator.calculation = 3; // Simulating multiplying button click
         double result = calculator.oldValue * calculator.newValue;
-        assertEquals(14, result, "multiplication should return 14");
+        assertEquals(real_result, result, "multiplication should return " + real_result);
     }
 
     @Test
     void testDivision() {
-        calculator.oldValue = 8;
-        calculator.newValue = 1;
+        calculator.oldValue = num_a;
+        calculator.newValue = num_b;
+        double real_result = num_a / num_b;
         calculator.calculation = 4; // Simulating dividing button click
         double result = calculator.oldValue / calculator.newValue;
-        assertEquals(8, result, "multiplication should return 14");
+        assertEquals(real_result, result, "multiplication should return " + real_result);
     }
 }
