@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
-                    sh 'mvn clean package'
+                    sh 'sudo mvn clean package'
                     
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "This is test stage"
-                    sh 'mvn test'
+                    sh 'sudo mvn test'
                     echo "Tests were successful"
                 }
             }
