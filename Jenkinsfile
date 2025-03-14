@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         MAVEN_HOME = tool 'Maven' // Assumes Maven is installed and configured in Jenkins
-        PATH = "${MAVEN_HOME}\\bin;${env.PATH}" //Updating path to use maven
+        PATH = "${MAVEN_HOME}/bin;${env.PATH}" //Updating path to use maven
     }
 
 
