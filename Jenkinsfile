@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "This is test stage"
-                    sh 'mvn test'
+                    sh 'mvn test -Djava.awt.headless=true'
                     echo "Tests were successful"
                 }
             }
