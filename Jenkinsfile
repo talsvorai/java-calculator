@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
-                    bat 'mvn clean package'
+                    sh 'mvn clean package'
                     
                 }
             }
@@ -31,6 +31,8 @@ pipeline {
             steps {
                 script {
                     echo "This is test stage"
+                    sh 'mvn test'
+                    echo "Tests were successful"
                 }
             }
         }
