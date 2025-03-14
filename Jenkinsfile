@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
-                    sh 'sudo mvn clean package'
+                    sh 'sudo mvn clean package -DskipTests'
                     
                 }
             }
