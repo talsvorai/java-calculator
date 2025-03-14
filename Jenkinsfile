@@ -21,6 +21,7 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
+                    sh 'sudo mvn test -Djava.awt.headless=true -X'
                     sh 'mvn clean package'
                     
                 }
