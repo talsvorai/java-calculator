@@ -21,7 +21,6 @@ pipeline {
             steps {
                 script {
                     echo "This is build stage"
-                    sh 'sudo mvn test -Djava.awt.headless=true -X'
                     sh 'mvn clean package'
                     
                 }
@@ -32,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "This is test stage"
-                    sh 'mvn test -Djava.awt.headless=true'
+                    sh 'mvn test'
                     echo "Tests were successful"
                 }
             }
