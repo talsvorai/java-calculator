@@ -18,22 +18,32 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Maven Build') {
             steps {
                 script {
                     echo "This is build stage"
                     sh 'sudo mvn clean package -DskipTests'
-                    
+                    echo "Build was successful"
                 }
             }
         }
 
-        stage('Test') {
+        stage('Maven_Test') {
             steps {
                 script {
                     echo "This is test stage"
                     sh 'sudo mvn test'
                     echo "Tests were successful"
+                }
+            }
+        }
+        stage('Docker Build') {
+            steps {
+                script {
+                    echo "Building Docker image"
+                    // Build the Docker image
+                    sh 'sudo docker build -t java-calculator:${BUILD_NUMBER} .'
+                    echo "Docker image built successfully"
                 }
             }
         }
